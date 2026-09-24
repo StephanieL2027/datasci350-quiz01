@@ -43,3 +43,38 @@ Response: They do not appear because the log1.txt and all three others match the
 
 wc -l < data/station-data.csv >> results/summary.md
 
+nano scripts/03-plot.py
+git diff scripts/03-plot.py
+Output:
+diff --git a/scripts/03-plot.py b/scripts/03-plot.py
+index 70ea841..108b791 100644
+--- a/scripts/03-plot.py
++++ b/scripts/03-plot.py
+@@ -1,4 +1,5 @@
+-# Plot the daily temperature readings
++# Reviewed for the field season report
++#  Plot the daily temperature readings
+ # Prints a simple text chart, one bar per reading.
+ 
+ from pathlib import Path
+Response: The + sign in the git diff output means the addition of a line that was not there before in the specific 03-plot.py
+
+git add . 
+git commit -m "Update analyss"
+
+git commit --amend -m "Update analysis"
+
+git switch main
+git merge station-upgrade
+
+Output:
+2713447 (HEAD -> main, station-upgrade) Update analysis
+afad8dc Add gitignore
+21788f9 Update station files
+4377543 Add results directory
+a22b29e (origin/main, origin/HEAD) docs(readme): note committing commands.txt before task 18 and force push for bonus 2
+b645f85 feat: quiz 01 starter files
+
+git add commands.txt
+git commit -m "Add command log"
+git push
