@@ -1,4 +1,5 @@
-# Plot the daily temperature readings
+# Reviewed for the field season report
+#  Plot the daily temperature readings
 # Prints a simple text chart, one bar per reading.
 
 from pathlib import Path

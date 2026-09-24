@@ -1,2 +1,45 @@
+cd ~/Desktop
+git clone https://github.com/StephanieL2027/datasci350-quiz01.git
+
+cd datasci350-quiz01
+pwd
+
+touch commands.txt
+
 git checkout -b station-upgrade
+
 mkdir results
+
+touch results/summary.md 
+echo "Analysis of the first field season." >> results/summary.md
+
+git add results
+git commit -m "Add results directory"
+
+mv data/sensor-readings.csv data/station-data.csv
+
+mkdir scripts/archive && cp scripts/*.py scripts/archive/
+
+rm docs/notes.md
+
+git add .
+git commit -m "Update station files"
+
+touch .gitignore
+echo "temp/" >> .gitignore
+echo "log?.txt" >> .gitignore
+
+cat .gitignore
+
+git add .gitignore && git commit -m "Add gitignore"
+
+touch log{1,2,3,4}.txt
+
+git status
+Output: 
+On branch station-upgrade
+nothing to commit, working tree clean
+Response: They do not appear because the log1.txt and all three others match the log?.txt wildcard pattern in the .gitignore which tells git to ignore, thus not appearing.
+
+wc -l < data/station-data.csv >> results/summary.md
+
